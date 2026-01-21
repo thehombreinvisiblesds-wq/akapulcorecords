@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akapulco Records</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #fafafa;
+      --primary: #ff8f8f;
+      --secondary: #ffe3d8;
+      --accent: #8fd3c8;
+      --text: #222;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: var(--primary);
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hamburguesa */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: white;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      nav {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: var(--primary);
+        flex-direction: column;
+        display: none;
+      }
+
+      nav.active { display: flex; }
+
+      nav a {
+        padding: 16px;
+        border-top: 1px solid rgba(255,255,255,0.3);
+      }
+
+      .menu-toggle { display: flex; }
+    }
+
+    .hero {
+      padding: 80px 24px;
+      text-align: center;
+    }
+
+    .hero h2 { font-size: 2.5rem; }
+
+    .hero p { margin: 16px 0; color: #555; }
+
+    .btn {
+      background: var(--accent);
+      color: white;
+      padding: 12px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    .section {
+      padding: 40px 24px;
+    }
+
+    .section h3 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 2rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      padding: 12px;
+      text-align: center;
+    }
+
+    .card img { width: 100%; border-radius: 6px; }
+
+    footer {
+      background: var(--secondary);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Akapulco Records</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <nav id="menu">
+    <a href="#artists">Artistas</a>
+    <a href="#catalog">Catálogo</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Música fresca desde Akapulco</h2>
+  <p>Sello independiente con alma tropical y visión global.</p>
+  <a href="#catalog" class="btn">Ver lanzamientos</a>
+</section>
+
+<section id="artists" class="section">
+  <h3>Artistas</h3>
+  <div class="grid">
+    <div class="card"><img src="artista1.jpg"><h4>Artista 1</h4></div>
+    <div class="card"><img src="artista2.jpg"><h4>Artista 2</h4></div>
+  </div>
+</section>
+
+<section id="catalog" class="section">
+  <h3>Catálogo</h3>
+  <div class="grid">
+    <div class="card"><img src="release1.jpg"><h4>Release 01</h4></div>
+    <div class="card"><img src="release2.jpg"><h4>Release 02</h4></div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h3>Contacto</h3>
+  <p style="text-align:center">Email: hola@akapulcorecords.com<br>
+  Instagram: @akplco</p>
+</section>
+
+<footer>
+  © 2026 Akapulco Records
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('menu').classList.toggle('active');
+  }
+</script>
+
+</body>
+</html>
